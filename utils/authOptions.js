@@ -1,6 +1,7 @@
-import GoogleProvider from 'next-auth/providers/google';
 import connectDB from '@/config/database';
 import User from '@/models/User';
+
+import GoogleProvider from 'next-auth/providers/google';
 
 export const authOptions = {
   providers: [
@@ -9,7 +10,7 @@ export const authOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       authorization: {
         params: {
-          prompts: 'consent',
+          prompt: 'consent',
           access_type: 'offline',
           response_type: 'code'
         }
