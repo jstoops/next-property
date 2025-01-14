@@ -21,6 +21,6 @@ const MainLayout = ({ children }) => {
       </html>
     </AuthProvider>
   );
-}
- 
+};
+
 export default MainLayout;
