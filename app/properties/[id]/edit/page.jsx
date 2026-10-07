@@ -7,15 +7,16 @@ const PropertyEditPage = async ({ params }) => {
   await connectDB();
 
   const propertyDoc = await Property.findById(params.id).lean();
-  const property = convertToSerializeableObject(propertyDoc);
 
-  if (!property) {
+  if (!propertyDoc) {
     return (
       <h1 className='text-center text-2xl font-bold mt-10'>
         Property Not Found
       </h1>
     );
   }
+
+  const property = convertToSerializeableObject(propertyDoc);
 
   return (
     <section className='bg-blue-50'>

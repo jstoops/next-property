@@ -6,9 +6,20 @@
  */
 
 export function convertToSerializeableObject(leanDocument) {
+  if (leanDocument == null || typeof leanDocument !== 'object') {
+    return leanDocument;
+  }
+
   for (const key of Object.keys(leanDocument)) {
-    if (leanDocument[key].toJSON && leanDocument[key].toString)
-      leanDocument[key] = leanDocument[key].toString();
+    const value = leanDocument[key];
+    if (
+      value != null &&
+      typeof value === 'object' &&
+      typeof value.toJSON === 'function' &&
+      typeof value.toString === 'function'
+    ) {
+      leanDocument[key] = value.toString();
+    }
   }
   return leanDocument;
 }
