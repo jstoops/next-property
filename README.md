@@ -41,3 +41,10 @@ Property Pulse uses the following technologies:
 - [React Spinners](https://www.npmjs.com/package/react-spinners): Collection of loading spinners with React.js based on Halogen.
 - [React Toastify](https://fkhadra.github.io/react-toastify/)
 - [React Share](https://www.npmjs.com/package/react-share): Social media buttons and share counts for react apps.
+
+## Tests
+
+```bash
+npm test
+npm run test:coverage
+```
