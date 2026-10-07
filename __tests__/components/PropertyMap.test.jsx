@@ -8,7 +8,7 @@ jest.mock('react-geocode', () => ({
   fromAddress: jest.fn(),
 }));
 
-jest.mock('react-map-gl', () => ({
+jest.mock('react-map-gl/mapbox', () => ({
   __esModule: true,
   default: ({ children, mapboxAccessToken }) => (
     <div data-testid='map' data-token={mapboxAccessToken}>
